@@ -55,7 +55,6 @@ async def get_async_session() -> AsyncGenerator:
 
 
 async def create_db_and_tables():
-    from src.models.books import Book
 
     global __async_engine
 

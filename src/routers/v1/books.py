@@ -37,6 +37,7 @@ async def create_book(
             "author": book.author,
             "year": book.year,
             "pages": book.pages,
+            "seller_id": book.seller_id
         }
     )
 

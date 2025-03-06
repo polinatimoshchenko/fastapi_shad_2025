@@ -41,7 +41,7 @@ def event_loop():
 
 
 # Создаем таблицы в тестовой БД. Предварительно удаляя старые.
-@pytest_asyncio.fixture(scope="session", autouse=True)
+@pytest_asyncio.fixture(scope="function", autouse=True)
 async def create_tables() -> None:
     """Create tables in DB."""
     async with async_test_engine.begin() as connection:

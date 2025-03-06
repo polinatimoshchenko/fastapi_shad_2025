@@ -13,9 +13,11 @@ services:
       - ./postgres_data:/var/lib/postgresql/data
     networks: [fastapi_project_shad]
 
-volumes:
-  postgres_data:
 
 networks:
   fastapi_project_shad:
     name: fastapi_project_shad
+
+volumes:
+  postgres_data:
+

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, field_validator
 from pydantic_core import PydanticCustomError
 
 __all__ = ["IncomingBook", "ReturnedBook", "ReturnedAllbooks"]
@@ -13,9 +13,8 @@ class BaseBook(BaseModel):
 
 # Класс для валидации входящих данных. Не содержит id так как его присваивает БД.
 class IncomingBook(BaseBook):
-    pages: int = Field(
-        default=150, alias="count_pages"
-    )  # Пример использования тонкой настройки полей. Передачи в них метаинформации.
+    pages: int  # Пример использования тонкой настройки полей. Передачи в них метаинформации.
+    seller_id: int
 
     @field_validator("year")  # Валидатор, проверяет что дата не слишком древняя
     @staticmethod
